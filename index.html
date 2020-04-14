@@ -3,62 +3,64 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
     </head>
     <body>
-        <div id="score">0</div>
         <div id="border">
+            <div id="score">0</div>
             <svg id="floatingbox" height="512" viewBox="0 0 512 512" width="512" xmlns="http://www.w3.org/2000/svg"><g id="Filled_outline" data-name="Filled outline"><path d="m312 256 176-232-232 176 16-72-120 120-8-64-98.4 131.2a108 108 0 0 0 -21.6 64.8 108 108 0 0 0 108 108h6.506a108 108 0 0 0 66.922-23.233l122.572-96.767-64-8 120-120z" fill="#f98500"/><circle cx="136" cy="376" fill="#ffba40" r="72"/><path d="m136 456a80 80 0 1 1 80-80 80.091 80.091 0 0 1 -80 80zm0-144a64 64 0 1 0 64 64 64.072 64.072 0 0 0 -64-64z"/><path d="m138.507 496h-6.507a116 116 0 0 1 -105.937-163.259l14.612 6.518a100 100 0 0 0 91.325 140.741h6.507a100.423 100.423 0 0 0 61.964-21.511l107.567-84.922-45.03-5.629a8 8 0 0 1 -4.665-13.595l100.574-100.574-45.182 10.041a8 8 0 0 1 -8.109-12.645l140.774-185.565-185.565 140.774a8 8 0 0 1 -12.645-8.109l10.04-45.182-100.573 100.574a8 8 0 0 1 -13.595-4.665l-5.544-44.349-86.518 115.357-12.8-9.6 98.4-131.2a8 8 0 0 1 14.338 3.808l5.971 47.769 108.434-108.434a8 8 0 0 1 13.467 7.392l-11.269 50.71 214.624-162.819a8 8 0 0 1 11.209 11.209l-162.819 214.624 50.71-11.269a8 8 0 0 1 7.392 13.467l-108.434 108.434 47.769 5.971a8 8 0 0 1 3.965 14.217l-122.572 96.767a116.478 116.478 0 0 1 -71.878 24.954z"/><path d="m168 368h16v16h-16z"/><path d="m144 400h16v16h-16z"/><path d="m148.765 92h166.469v16h-166.469z" transform="matrix(.577 -.817 .817 .577 16.519 231.878)"/><path d="m470.132 221.778h19.737v15.999h-19.737z" transform="matrix(.811 -.585 .585 .811 -43.661 324.523)"/><path d="m330.922 279.556h138.156v15.999h-138.156z" transform="matrix(.811 -.585 .585 .811 -92.633 288.623)"/><path d="m177.816 28h28.675v15.999h-28.675z" transform="matrix(.547 -.837 .837 .547 56.864 177.123)"/><path d="m17.67 138.353h204.66v15.999h-204.66z" transform="matrix(.547 -.837 .837 .547 -68.163 166.693)"/><path d="m351.763 360.5h136.473v16h-136.473z" transform="matrix(.879 -.476 .476 .879 -124.818 244.542)"/><path d="m284.156 416.833h63.688v16h-63.688z" transform="matrix(.879 -.476 .476 .879 -164.206 201.806)"/><path d="m322.563 46.545h82.874v16h-82.874z" transform="matrix(.676 -.737 .737 .676 77.833 286.018)"/><path d="m298.721 100h32.558v16h-32.558z" transform="matrix(.676 -.737 .737 .676 22.538 267.232)"/><path d="m440.869 130.333h54.263v16.001h-54.263z" transform="matrix(.737 -.676 .676 .737 29.541 352.609)"/><path d="m384.22 180h59.196v16.001h-59.196z" transform="matrix(.737 -.676 .676 .737 -18.263 329.052)"/><path d="m209.017 220.833h36.298v16h-36.298z" transform="matrix(.707 -.707 .707 .707 -95.274 227.669)"/><path d="m160.682 262.333h49.969v16h-49.969z" transform="matrix(.707 -.707 .707 .707 -136.777 210.479)"/><path d="m315.029 172h33.941v16h-33.941z" transform="matrix(.707 -.707 .707 .707 -30.034 287.496)"/><path d="m196.877 241.833h130.579v16h-130.579z" transform="matrix(.707 -.707 .707 .707 -99.872 258.57)"/><path d="m241.278 286.667h64.111v16h-64.111z" transform="matrix(.707 -.707 .707 .707 -128.304 279.599)"/><path d="m220.963 328.667h20.742v16h-20.742z" transform="matrix(.707 -.707 .707 .707 -170.307 262.202)"/></g></svg>
         </div>
     </body>
     <style>
         body {
+            position: absolute;
             margin: 0;
-            max-width: 100vw;
-            max-height: 100vh;
-            overflow: hidden;
+            min-width: 500px;
+            min-height: 500px;
+            width: 100%;
             height: 100%;
             cursor: crosshair;
             background-image: url("https://blenderartists.org/uploads/default/original/4X/7/e/2/7e2d7bea4ac21388c4a96e1371f375c4ce00094b.jpg");
         }
         #border {
-            min-width: 500px;
-            min-height: 500px;
-            margin: 0;
-            position: absolute;
+            position: relative;
+            overflow: hidden;
             width: 100%;
             height: 100%;
-            top: 0;
-            left: 0;
+            margin: 0;
         }
         #score {
-            margin: 0;
-            margin-left: -50px;
-            margin-top: -40px;
+            margin: 0 auto;
             position: absolute;
-            width: 100px;
-            height: 100px;
-            text-align: center;
-            font-size: 100px;
+            width: auto;
+            height: auto;
             top: 50%;
-            left: 50%;
-            background: -webkit-linear-gradient(rgba(226, 226, 226, 0.397), #333);
+            left: 0;
+            right: 0;
+            transform: translateY(-50%);
+            text-align: center;
+            font-size: 10rem;
+            background: -webkit-linear-gradient(rgba(117, 0, 108, 0.5), rgb(0, 0, 0, 0));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            filter: drop-shadow(0mm 0mm 5px rgb(255, 0, 255));
-            cursor: default;
+            filter: drop-shadow(0mm 0mm 20px rgb(255, 0, 255, 1));
             -webkit-touch-callout: none;
             -webkit-user-select: none;
             -khtml-user-select: none;
             -moz-user-select: none;
             -ms-user-select: none;
             user-select: none;
+            cursor: default;
             display: none;
         }
         #floatingbox {
+            position: absolute;
             width: 50px;
             height: 50px;
             filter: drop-shadow(2mm -2mm 7px rgb(255, 100, 0));
             transition: none;
             display: block;
             transform: rotate(-90deg);
+        }
+        @media only screen and (max-width: 500px) {
+
         }
     </style>
     <script>
@@ -73,15 +75,18 @@
         mainAudio.volume = 0.2;
         mainAudio.loop = true;
 
-        var minDelay = 2;
-        var maxDelay = 5;
-        var maxStepX = 20;
-        var maxStepY = 10;
+        var maxDelay = 10000;
+
+        var maxStepX = 3;
+        var maxStepY = 3;
+
+        var minStepX = 1;
+        var minStepY = 1;
         
         var scale = 100;
 
-        var stepX = Math.floor(Math.random()*maxStepX)+1;
-        var stepY = Math.floor(Math.random()*maxStepY)+1;
+        var stepX = Math.floor(Math.random()*(maxStepX-minStepX))+minStepX;
+        var stepY = Math.floor(Math.random()*(maxStepY-minStepY))+minStepY;
         stepX *= Math.floor(Math.random()*2) == 1 ? 1 : -1;
         stepY *= Math.floor(Math.random()*2) == 1 ? 1 : -1;
     
@@ -91,25 +96,23 @@
         var dirX = Math.floor(Math.random()*bWidth);
         var dirY = Math.floor(Math.random()*bHeight);
 
-        var time = parseInt(new Date().getTime()/1000);
-        var rTime = time + Math.floor(minDelay+Math.random()*maxDelay);
+        var time = parseInt(new Date().getTime());
+        var rTime = time + Math.floor(Math.random()*maxDelay);
 
         var angle = (Math.atan2(-stepY,-stepX)*180/Math.PI)+45;
         floatingBox.style.transform = "rotate(" + angle + "deg)";
-        setTimeout(function(){floatingBox.style.transition = "all 50ms linear"},25);
+        setTimeout(function(){floatingBox.style.transition = "all 50ms linear"},150);
         
         var scoreV = 0;
         var scoreT = false;
 
         var I = 0;
 
-        maxDelay = maxDelay - minDelay;
-
         floatingBox.style.width = scale + "px";
         floatingBox.style.height = scale + "px";
     
-        floatingBox.style.marginLeft = dirX + "px";
-        floatingBox.style.marginTop = dirY + "px";
+        floatingBox.style.left = dirX + "px";
+        floatingBox.style.top = dirY + "px";
 
         function resizeEvent(){
             bWidth = border.clientWidth-scale;
@@ -121,33 +124,41 @@
             audio.play();
             mainAudio.play();
 
+            maxStepX = maxStepX + Math.floor(scoreV/20);
+            maxStepY = maxStepY + Math.floor(scoreV/20);
+
             score.style.display = "block";
 
             floatingBox.style.transition = "none";
             dirX = Math.floor(Math.random()*bWidth);
             dirY = Math.floor(Math.random()*bHeight);
-            stepX = Math.floor(Math.random()*maxStepX)+1;
-            stepY = Math.floor(Math.random()*maxStepY)+1;
+            stepX = Math.floor(Math.random()*(maxStepX-minStepX))+minStepX;
+            stepY = Math.floor(Math.random()*(maxStepY-minStepY))+minStepY;
             stepX *= Math.floor(Math.random()*2) == 1 ? 1 : -1;
             stepY *= Math.floor(Math.random()*2) == 1 ? 1 : -1;
             angle = (Math.atan2(-stepY,-stepX)*180/Math.PI)+45;
             scoreV += 1;
             scoreT = true;
             score.innerHTML = scoreV;
-            setTimeout(function(){floatingBox.style.transition = "all 50ms linear"},25);
+
+            setTimeout(function(){floatingBox.style.transition = "all 50ms linear"},150);
+
+            if(maxDelay>=500){
+                maxDelay = maxDelay - Math.floor(Math.random()*200);
+            };
         };
 
         floatingBox.addEventListener("click",click);
 
         var interval = setInterval(function (){
 
-            time = parseInt(new Date().getTime()/1000);
+            time = parseInt(new Date().getTime());
 
             border.addEventListener("resize",resizeEvent());
 
             if(time>=rTime||scoreT){
 
-                rTime = time + Math.floor(minDelay+Math.random()*maxDelay);
+                rTime = time + Math.floor(Math.random()*maxDelay);
                 stepX = Math.floor(Math.random()*maxStepX)+1;
                 stepY = Math.floor(Math.random()*maxStepY)+1;
                 stepX *= Math.floor(Math.random()*2) == 1 ? 1 : -1;
@@ -162,13 +173,13 @@
                 dirY = dirY + stepY;
             }
 
-            if(dirX>bWidth+(scale/2)){dirX=-scale/2; floatingBox.style.transition = "none"; setTimeout(function(){floatingBox.style.transition = "all 50ms linear"},25);}
-            if(dirX<-scale/2){dirX=bWidth+(scale/2); floatingBox.style.transition = "none";  setTimeout(function(){floatingBox.style.transition = "all 50ms linear"},25);}
-            if(dirY>bHeight+(scale/2)){dirY=-scale/2; floatingBox.style.transition = "none";  setTimeout(function(){floatingBox.style.transition = "all 50ms linear"},25);}
-            if(dirY<-scale/2){dirY=bHeight+(scale/2); floatingBox.style.transition = "none";  setTimeout(function(){floatingBox.style.transition = "all 50ms linear"},25);}
+            if(dirX>bWidth+(scale/2)){dirX=-scale/2; floatingBox.style.transition = "none"; setTimeout(function(){floatingBox.style.transition = "all 50ms linear"},150);}
+            if(dirX<-scale/2){dirX=bWidth+(scale/2); floatingBox.style.transition = "none";  setTimeout(function(){floatingBox.style.transition = "all 50ms linear"},150);}
+            if(dirY>bHeight+(scale/2)){dirY=-scale/2; floatingBox.style.transition = "none";  setTimeout(function(){floatingBox.style.transition = "all 50ms linear"},150);}
+            if(dirY<-scale/2){dirY=bHeight+(scale/2); floatingBox.style.transition = "none";  setTimeout(function(){floatingBox.style.transition = "all 50ms linear"},150);}
 
-            floatingBox.style.marginLeft = dirX + "px";
-            floatingBox.style.marginTop = dirY + "px";
+            floatingBox.style.left = dirX + "px";
+            floatingBox.style.top = dirY + "px";
 
         },50);
     </script>
