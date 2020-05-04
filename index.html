@@ -13,13 +13,13 @@
             var scene = new THREE.Scene();
             var time = 0;
 
-        materialLoader.load('212.mtl', function(materials){
+        materialLoader.load('https://drive.google.com/u/0/uc?id=1Z2jz_H9zzG7Kgy0oZMisKInBiU7eVIyA&export=download', function(materials){
 
             materials.preload();
 
             loader.setMaterials(materials);
 
-            loader.load('212.obj', function (object){
+            loader.load('https://drive.google.com/u/0/uc?id=1U3c7ATqFbocZYnIKF5FR4ZDziHpDYfGT&export=download', function (object){
 
                     scene.add(object);
 
