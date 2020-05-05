@@ -13,13 +13,13 @@
             var scene = new THREE.Scene();
             var time = 0;
 
-        materialLoader.load('212.mtl', function(materials){
+        materialLoader.load('211.mtl', function(materials){
 
             materials.preload();
 
             loader.setMaterials(materials);
 
-            loader.load('212.obj', function (object){
+            loader.load('211.obj', function (object){
 
                     scene.add(object);
 
@@ -30,38 +30,27 @@
                     object.getObjectByName("planet").castShadow = true;
                     object.getObjectByName("planet").receiveShadow = true;
 
-                    //object.getObjectByName("orbit").position.set( 0, 0, 0 );
-                    //object.getObjectByName("orbit").rotation.set( 0.5, 0, 0 );
-
-                    object.getObjectByName("planet").position.set( 0, 0, 0 );
+                    object.getObjectByName("planet").position.set(0,0,0);
                     object.getObjectByName("planet").material.transparent = true;
-                    object.getObjectByName("planet").material.opacity = 0.5;
-                    //object.getObjectByName("satellite").position.set( -200, 0, 0 );
+                    object.getObjectByName("planet").material.opacity = 1;
 
                     object.computeVertexNormals;
-
-
 
                     function animate() {
                         requestAnimationFrame(animate);
                         //object.rotation.z = 0.1;
-                        object.getObjectByName("planet").rotation.y += 0.01;
+                        object.getObjectByName("planet").rotation.y += -    0.0025;
                         time += 0.01;
                         object.getObjectByName("satellite").position.x = Math.sin(time)* 120;
                         object.getObjectByName("satellite").position.y = Math.sin(3+time)* 60;
                         object.getObjectByName("satellite").position.z = Math.cos(time)* 120;
                         object.getObjectByName("satellite").rotation.x += 0.01;
                         object.getObjectByName("satellite").rotation.y += 0.01;
+
                         renderer.render( scene, camera );
-
-
-
-
 
                     }
                     animate();
-
-
                 },
                 function ( xhr ) {
                     console.log( ( xhr.loaded / xhr.total * 100 )+'% loaded');
@@ -73,14 +62,15 @@
 
         });
 
-        const light = new THREE.DirectionalLight(0xffffff, 1.5, 100);
+        const light = new THREE.DirectionalLight('white', 1, 100);
 
-        light.position.set( 100, 200, 300 );
+        light.position.set( 100, 200, 150 );
         light.castShadow = true;
 
         scene.add(light);
 
-        scene.background = new THREE.Color(0x181949);
+        //scene.background = new THREE.Color(0x181949);
+        scene.background = new THREE.Color('black');
 
         var camera = new THREE.PerspectiveCamera( 70, window.innerWidth / window.innerHeight, 0.1, 1000 );
 
